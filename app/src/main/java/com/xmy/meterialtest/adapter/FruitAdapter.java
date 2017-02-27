@@ -1,4 +1,4 @@
-package com.xmy.meterialtest;
+package com.xmy.meterialtest.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.xmy.meterialtest.R;
+import com.xmy.meterialtest.activity.FruitActivity;
+import com.xmy.meterialtest.bean.Fruit;
 
 import java.util.List;
 
@@ -61,6 +64,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                 int position = holder.getAdapterPosition();
                 FruitActivity.startFruitActivity(mContext, mFruitList.get(position).getName(), mFruitList.get(position).getImageId());
                 Log.e("AAAAAAAAAAA","name-----"+mFruitList.get(position).getName()+"------------image------"+mFruitList.get(position).getImageId());
+
             }
         });
 

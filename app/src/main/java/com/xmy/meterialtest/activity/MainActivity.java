@@ -1,4 +1,4 @@
-package com.xmy.meterialtest;
+package com.xmy.meterialtest.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +17,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.xmy.meterialtest.adapter.FruitAdapter;
+import com.xmy.meterialtest.R;
+import com.xmy.meterialtest.bean.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;

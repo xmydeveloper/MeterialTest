@@ -1,4 +1,4 @@
-package com.xmy.meterialtest;
+package com.xmy.meterialtest.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.xmy.meterialtest.R;
 
 /**
  * @projectName: MeterialTest
@@ -42,7 +42,6 @@ public class FruitActivity extends AppCompatActivity {
         intent.setClass(mContent, FruitActivity.class);
         intent.putExtra(FRUIT_NAME, fruitName);
         intent.putExtra(FRUIT_IMAGE_ID + "", fruitId);
-        Log.e("AAAAAAAAAAA", "name1-----" + fruitName + "------------image1------" + fruitId);
         mContent.startActivity(intent);
     }
 

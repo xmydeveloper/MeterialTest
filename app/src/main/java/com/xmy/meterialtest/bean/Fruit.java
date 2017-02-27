@@ -1,4 +1,4 @@
-package com.xmy.meterialtest;
+package com.xmy.meterialtest.bean;
 
 /**
  * @projectName: MeterialTest
