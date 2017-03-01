@@ -1,5 +1,6 @@
 package com.xmy.meterialtest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -73,6 +74,12 @@ public class MainActivity extends BaseActivity {
                     case R.id.nav_call:
                         SecondActivity.startSecondActivity(MainActivity.this);
                         break;
+                    case R.id.nav_friends:
+                        Intent intent = new Intent();
+                        intent.setAction("com.xmy.meterialtest.FORCE_OFFLINE");
+                        sendBroadcast(intent);
+                        break;
+
                 }
 
                 mDrawerLayout.closeDrawers();

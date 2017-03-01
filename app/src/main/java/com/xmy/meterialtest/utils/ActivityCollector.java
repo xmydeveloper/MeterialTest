@@ -29,7 +29,7 @@ public class ActivityCollector {
         return activities.remove(activity);
     }
 
-    public static void removeAll() {
+    public static void removeAllActivity() {
         for (Activity activity : activities) {
             if (!activity.isFinishing()) {
                 activity.finish();
