@@ -9,7 +9,6 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,7 +31,7 @@ import com.xmy.meterialtest.R;
  * @upDate: 2017/2/15
  * @upDateDesc: TODO
  */
-public class FruitActivity extends AppCompatActivity {
+public class FruitActivity extends BaseActivity {
 
     private static final String FRUIT_NAME = "fruit_name";
     private static final String FRUIT_IMAGE_ID = "fruit_image_id";

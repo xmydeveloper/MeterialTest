@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 
 import com.xmy.meterialtest.R;
 
@@ -21,7 +20,7 @@ import com.xmy.meterialtest.R;
  * @upDate: 2017/2/28
  * @upDateDesc: TODO
  */
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
 
     public static void startSecondActivity(Context context) {
         Intent intent = new Intent();
