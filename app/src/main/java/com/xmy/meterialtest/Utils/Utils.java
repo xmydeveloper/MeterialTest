@@ -1,4 +1,4 @@
-package com.xmy.meterialtest.Utils;
+package com.xmy.meterialtest.utils;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -29,4 +29,7 @@ public class Utils {
         toast.show();
 
     }
+
+
+
 }
