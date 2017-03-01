@@ -18,8 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.xmy.meterialtest.adapter.FruitAdapter;
 import com.xmy.meterialtest.R;
+import com.xmy.meterialtest.adapter.FruitAdapter;
 import com.xmy.meterialtest.bean.Fruit;
 
 import java.util.ArrayList;
@@ -70,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_call:
+                        SecondActivity.startSecondActivity(MainActivity.this);
+                        break;
+                }
+
                 mDrawerLayout.closeDrawers();
                 return true;
             }
@@ -94,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager manager = new GridLayoutManager(this, 2);
+//        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);//最后一个参数：true 从末端开始向左滑，false 反之
+//        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
         adapter = new FruitAdapter(fruitList);
         mRecyclerView.setAdapter(adapter);
@@ -106,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 refreshFruits();
             }
         });
-
 
 
     }
@@ -131,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }).start();
-
 
 
     }

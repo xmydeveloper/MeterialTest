@@ -1,6 +1,9 @@
-package com.xmy.meterialtest.Utils;
+package com.xmy.meterialtest;
 
 import android.app.Application;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.widget.Toast;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -91,4 +94,23 @@ public class WholeApplication extends Application {
         }
 
     }
+
+    /**
+     * 判断网络情况
+     *
+     * @return
+     */
+    public boolean isNetWorkConnect() {
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isAvailable()) {
+            Toast.makeText(this, "network is available", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "network is unavailable", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
 }
