@@ -44,9 +44,18 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        if (recever != null) {
+            unregisterReceiver(recever);
+            recever = null;
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollector.removeAllActivity();
+//        ActivityCollector.removeAllActivity();
         if (recever != null) {
             unregisterReceiver(recever);
             recever = null;
@@ -65,8 +74,10 @@ public class BaseActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     ActivityCollector.removeAllActivity();
-                    Intent intent = new Intent(context, MainActivity.class);
-                    context.startActivity(intent);
+//                    Intent intent = new Intent(context, MainActivity.class);//应该回到登陆界面，这里没有写，先用MainActivity代替
+//                    context.startActivity(intent);
+                    LoginActivity.startLoginActivity(context);
+
                 }
             });
             builder.show();

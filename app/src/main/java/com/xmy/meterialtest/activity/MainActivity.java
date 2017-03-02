@@ -22,6 +22,8 @@ import com.xmy.meterialtest.R;
 import com.xmy.meterialtest.adapter.FruitAdapter;
 import com.xmy.meterialtest.bean.Fruit;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -64,7 +66,11 @@ public class MainActivity extends BaseActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
         }
 
-
+        try {
+            FileOutputStream fileOutputStream = openFileOutput("hehe", MODE_APPEND);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         mNavigationView.setCheckedItem(R.id.nav_call);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
