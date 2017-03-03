@@ -40,7 +40,7 @@ public class TittleLayout extends LinearLayout {
             @Override
             public void onClick(View v) {
 //                Utils.showToast(context, "mEditext is clicked!");
-                Utils.showNotifycation(context, "标题", "内容");
+                Utils.showNotifycation(context, "通知标题", "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容");
 
             }
         });

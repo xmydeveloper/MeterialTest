@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends BaseActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -72,6 +74,18 @@ public class MainActivity extends BaseActivity {
             e.printStackTrace();
         }
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View headerview = mNavigationView.getHeaderView(0);
+
+        CircleImageView circleImageView = (CircleImageView) headerview.findViewById(R.id.nav_image);
+        circleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO： 从相册选择图片或者拍照
+            }
+        });
+
+
         mNavigationView.setCheckedItem(R.id.nav_call);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -85,7 +99,6 @@ public class MainActivity extends BaseActivity {
                         intent.setAction("com.xmy.meterialtest.FORCE_OFFLINE");
                         sendBroadcast(intent);
                         break;
-
                 }
 
                 mDrawerLayout.closeDrawers();
