@@ -39,7 +39,9 @@ public class TittleLayout extends LinearLayout {
         mEditext.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.showToast(context, "mEditext is clicked!");
+//                Utils.showToast(context, "mEditext is clicked!");
+                Utils.showNotifycation(context, "标题", "内容");
+
             }
         });
 
