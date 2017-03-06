@@ -18,7 +18,7 @@ import com.xmy.meterialtest.utils.Utils;
  * @author:xiamingyan
  * @time: 2017/2/28	11:45
  * @E-mail：xmydeveloper@163.com
- * @desc: TODO
+ * @desc: 标题栏
  * @upDateAuthor: lenovo
  * @upDate: 2017/2/28
  * @upDateDesc: TODO
@@ -40,7 +40,7 @@ public class TittleLayout extends LinearLayout {
             @Override
             public void onClick(View v) {
 //                Utils.showToast(context, "mEditext is clicked!");
-                Utils.showNotifycation(context, "通知标题", "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容");
+                Utils.showNotifycation(context, "通知标题", "内容");
 
             }
         });

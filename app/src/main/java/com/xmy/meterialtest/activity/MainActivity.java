@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,6 +83,32 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //TODO： 从相册选择图片或者拍照
+//                HttpUtils.sendOkhttpRequest("https://www.hao123.com", new Callback() {
+//                    @Override
+//                    public void onFailure(Call call, IOException e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onResponse(Call call, Response response) throws IOException {
+//
+//                    }
+//                });
+
+//                HttpUtils.sendHttpRequest("https://www.hao123.com", new HttpCallBackListener() {
+//                    @Override
+//                    public void onFinish(String response) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Exception e) {
+//
+//                    }
+//                });
+
+
+
             }
         });
 
@@ -203,5 +230,10 @@ public class MainActivity extends BaseActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
     }
 }
