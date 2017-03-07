@@ -30,6 +30,16 @@
         <activity android:name=".activity.SecondActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.DownloadActivity" />
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -108,7 +108,6 @@ public class MainActivity extends BaseActivity {
 //                });
 
 
-
             }
         });
 
@@ -125,6 +124,13 @@ public class MainActivity extends BaseActivity {
                         Intent intent = new Intent();
                         intent.setAction("com.xmy.meterialtest.FORCE_OFFLINE");
                         sendBroadcast(intent);
+                        break;
+                    case R.id.nav_task:
+                        DownloadActivity.startDownloadActivity(MainActivity.this);
+
+                        break;
+                    default:
+
                         break;
                 }
 
@@ -170,6 +176,27 @@ public class MainActivity extends BaseActivity {
 
 
     }
+
+
+//    /**
+//     * 服务与进程通讯
+//     */
+//
+//    private ServiceConnection serviceConnection = new ServiceConnection() {
+//        @Override
+//        public void onServiceConnected(ComponentName name, IBinder service) {
+//            MyService.DowlaodBinder binder = (MyService.DowlaodBinder) service;
+//            binder.startDowload();
+//            int progress = binder.getProgress();
+//
+//        }
+//
+//        @Override
+//        public void onServiceDisconnected(ComponentName name) {
+//
+//        }
+//    };
+
 
     private void refreshFruits() {
         new Thread(new Runnable() {
