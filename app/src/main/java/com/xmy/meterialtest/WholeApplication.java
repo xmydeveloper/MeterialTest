@@ -1,6 +1,7 @@
 package com.xmy.meterialtest;
 
 import android.app.Application;
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
@@ -27,9 +28,14 @@ import java.util.logging.Level;
  * @upDateDesc: TODO
  */
 public class WholeApplication extends Application {
+
+    private static Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        context = getApplicationContext();
+
         HttpHeaders headers = new HttpHeaders();
         headers.put("commonHeaderKey1", "commonHeaderValue1");    //所有的 header 都 不支持 中文
         headers.put("commonHeaderKey2", "commonHeaderValue2");
@@ -94,6 +100,16 @@ public class WholeApplication extends Application {
         }
 
     }
+
+
+    /**
+     * 获取全局Context
+     * @return 全局Context
+     */
+    public static Context getContext() {
+        return context;
+    }
+
 
     /**
      * 判断网络情况

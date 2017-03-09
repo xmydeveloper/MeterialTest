@@ -199,26 +199,24 @@ public class MainActivity extends BaseActivity {
 
 
     private void refreshFruits() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        initFruit();
-                        adapter.notifyDataSetChanged();
-                        refreshLayout.setRefreshing(false);
-                    }
-                });
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }).start();
 
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    initFruit();
+                    adapter.notifyDataSetChanged();
+                    refreshLayout.setRefreshing(false);
+                }
+            });
+
+
+        }).start();
 
     }
 

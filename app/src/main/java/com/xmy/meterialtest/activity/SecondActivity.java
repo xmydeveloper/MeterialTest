@@ -105,27 +105,21 @@ public class SecondActivity extends BaseActivity {
 
 
     private void refreshContacts() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        readContacts();
-                        adapter.notifyDataSetChanged();
-                        mUpdate.setRefreshing(false);
-                    }
-                });
-
-
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+            runOnUiThread(() -> {
+                readContacts();
+                adapter.notifyDataSetChanged();
+                mUpdate.setRefreshing(false);
+            });
         }).start();
+
     }
 
     private void readContacts() {

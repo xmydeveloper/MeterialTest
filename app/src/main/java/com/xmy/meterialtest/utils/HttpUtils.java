@@ -36,48 +36,44 @@ public class HttpUtils {
      */
     public static void sendHttpRequest(final String address, final HttpCallBackListener listener) {
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HttpURLConnection connection = null;
-                try {
-                    URL url = new URL(address);
-                    connection = (HttpURLConnection) url.openConnection();
+        new Thread(() -> {
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL(address);
+                connection = (HttpURLConnection) url.openConnection();
 
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(8000);
-                    connection.setReadTimeout(8000);
-                    connection.setDoInput(true);
-                    connection.setDoOutput(true);
-                    InputStream in = connection.getInputStream();
-                    BufferedReader buffer = new BufferedReader(new InputStreamReader(in));
-                    StringBuilder respones = new StringBuilder();
-                    String line;
-                    while ((line = buffer.readLine()) != null) {
-                        respones.append(line);
-                    }
-
-
-                    if (listener != null) {
-                        listener.onFinish(respones.toString());
-                    }
-
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    listener.onError(e);
-
-                } finally {
-                    if (connection != null) {
-                        connection.disconnect();
-                    }
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(8000);
+                connection.setReadTimeout(8000);
+                connection.setDoInput(true);
+                connection.setDoOutput(true);
+                InputStream in = connection.getInputStream();
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(in));
+                StringBuilder respones = new StringBuilder();
+                String line;
+                while ((line = buffer.readLine()) != null) {
+                    respones.append(line);
                 }
 
 
-            }
-        }).start();
+                if (listener != null) {
+                    listener.onFinish(respones.toString());
+                }
 
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                listener.onError(e);
+
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
+
+
+        }).start();
 
     }
 
